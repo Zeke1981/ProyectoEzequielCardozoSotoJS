@@ -1,7 +1,8 @@
-// Comision 49795
-// Alumno: Victor Ezequiel Cardozo Soto
-// Primera pre-entrega
+// Comision 49845
+// Alumno: Ezequiel Cardozo Soto
+// Primera pre-entrega JS
 // Descripcion: Ticket de compra de Licoreria "Elissir Bebidas"
+//permitir que solo el usuario mayor de Edad pueda comprar bebidas alcoholicas
 
 
 const SI = `si`;
@@ -12,6 +13,7 @@ let edadUsuario;
 let nombreCliente;
 let nombreBebida;
 let precio;
+
 let cantidad;
 let total = 0;
 let fila;
@@ -37,7 +39,7 @@ do {
     if (precio === 0 && cantidad === 0) {
         alert(`por favor ingrese un numero mayor que 0`)
     }
-    fila = `${nombreBebida}     ${precio}               ${cantidad}                 $${precio * cantidad} \n`;
+    fila = `  ${nombreBebida}     ${precio}               ${cantidad}                 $${precio * cantidad} \n`;
     ticket = ticket + fila;
     total = cantidad * precio;
 
@@ -47,7 +49,7 @@ do {
 while (continuar == `si`);
 alert(ticket);
 ticket = ticket + `TOTAL DE LA COMPRA: $${total}`;
-alert(`Gracias estimado \n ${nombreCliente} \n vuleva pronto!`);
+alert(`Gracias estimado \n ${nombreCliente} \n vuelva pronto!`);
 
 
 
