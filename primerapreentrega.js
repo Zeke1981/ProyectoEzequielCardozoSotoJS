@@ -2,7 +2,8 @@
 // Alumno: Ezequiel Cardozo Soto
 // Primera pre-entrega JS
 // Descripcion: Ticket de compra de Licoreria "Elissir Bebidas"
-//permitir que solo el usuario mayor de Edad pueda comprar bebidas alcoholicas
+//1-Ingresar el nombre del trabajador
+//2-permitir que solo el usuario mayor de Edad pueda comprar bebidas alcoholicas
 
 
 const SI = `si`;
@@ -20,17 +21,18 @@ let fila;
 let continuar;
 let ticket = `Nombre     Precio      Cantidad        Subtotal \n  `
 
-function saludar(){
-    alert(`Bienvenido a Elissir Bebidas`);
+function saludar(trabajadorTienda){
+    alert(`Bienvenido ${trabajadorTienda}`);
 }
-saludar();
+
+
+let trabajadorTienda = prompt(`Estimado trabajador ingresa tu nombre`);
+saludar(trabajadorTienda);
 
 edadUsuario= parseInt(prompt(`Por favor ingrese la edad del cliente`));
 if(edadUsuario >= MAYOR_EDAD) {
     alert(`El cliente puede seguir comprando`);
     
-    
-        
 }else{
     alert(`No cumple la edad requerida`);
     alert(`introduzca edad valida`);
@@ -50,7 +52,7 @@ do {
     }
     fila = `${nombreBebida}     ${precio}               ${cantidad}                 $${precio * cantidad} \n`;
     ticket = ticket + fila;
-    total = cantidad * precio;
+    total = total + cantidad * precio;
 
     continuar = prompt(`Desea sumar otra bebida? si/no`).toLowerCase();
 
