@@ -20,17 +20,26 @@ let fila;
 let continuar;
 let ticket = `Nombre     Precio      Cantidad        Subtotal \n  `
 
+function saludar(){
+    alert(`Bienvenido a Elissir Bebidas`);
+}
+saludar();
 
 edadUsuario= parseInt(prompt(`Por favor ingrese la edad del cliente`));
-if (edadUsuario >= MAYOR_EDAD) {
+if(edadUsuario >= MAYOR_EDAD) {
     alert(`El cliente puede seguir comprando`);
-
+    
+    
+        
 }else{
-        alert(`No cumple la edad requerida`)
+    alert(`No cumple la edad requerida`);
+    alert(`introduzca edad valida`);
+    edadUsuario= parseInt(prompt(`Por favor ingrese la edad del cliente`));
     }
 
 
 nombreCliente = prompt(`Bienvenido a Elissir bebidas!! \n Por favor ingrese nombre del cliente: `);
+
 
 do {
     nombreBebida = prompt(`Bebida para ${nombreCliente} \n Ingrese su bebida `);
@@ -39,7 +48,7 @@ do {
     if (precio === 0 && cantidad === 0) {
         alert(`por favor ingrese un numero mayor que 0`)
     }
-    fila = `  ${nombreBebida}     ${precio}               ${cantidad}                 $${precio * cantidad} \n`;
+    fila = `${nombreBebida}     ${precio}               ${cantidad}                 $${precio * cantidad} \n`;
     ticket = ticket + fila;
     total = cantidad * precio;
 
@@ -47,8 +56,8 @@ do {
 
 }
 while (continuar == `si`);
-alert(ticket);
 ticket = ticket + `TOTAL DE LA COMPRA: $${total}`;
+alert(ticket);
 alert(`Gracias estimado \n ${nombreCliente} \n vuelva pronto!`);
 
 
