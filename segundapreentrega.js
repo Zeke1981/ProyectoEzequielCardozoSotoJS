@@ -1,3 +1,14 @@
+// Comision 49845
+// Alumno: Ezequiel Cardozo Soto
+// SEGUNDA pre-entrega JS
+// Licoreria "Elissir Bebidas"
+//ingresar nombre de la tienda
+//ingresar horario
+//1-Ingresar el nombre del trabajador
+//2-permitir que solo el usuario mayor de Edad pueda comprar bebidas alcoholicas
+// ingresar bebida// inicio del carrito de compras
+
+
 const SI = `si`;
 const NO = `no`;
 const MAYOR_EDAD = 18;
