@@ -21,7 +21,7 @@ class Tienda{
         this.nombre = nombre;
         this.direccion = direccion;
 
-    }
+    }//ingresar dos veces el horario, la primera a las 15 hs por ejemplo y la segunda segun el rango de abajo
     estaAbierto(hora){
         if (((hora  >= 9) && (hora  <= 13))||((hora  >= 16) && (hora  <= 22))) {
             return true;
@@ -101,7 +101,7 @@ function mostrarProducto(producto) {
 
 
 mostrarProducto(productoNuevo);
-mostrarProducto(producto1);
+
 
 //aqui tambien implemente un array de carrito
 
@@ -113,16 +113,34 @@ const carrito = [
     { nombre: ' Aperitivo Fernet Branca 750cc', bebidaTipo: 'Aperitivo', precio: 8500}
 ];
 
+//subo un producto más a la lista
+
 carrito.push({ nombre: 'Aperitivo Campari 750cc', bebidaTipo: 'Aperitivo', precio: 5500});
+console.log(carrito);
 
-console.table( carrito );
+//busco un precio de bebida entre los 5000 y 50000 pesos
+const encontrado = carrito.filter( (item) => (item.precio <= 50000 && item.precio >= 5000));
+
+console.log(encontrado);
+
+//los precios suben por inflacion 25% en enero
+const subaPrecios = carrito.map( (item )=> item.precio * 1.25);
+
+console.log(subaPrecios);
+console.table(subaPrecios);
 
 
-for( let i=0; i<carrito.length; i++ ){
-    console.log('Nombre ' +  carrito[i].nombre );
-    console.log('Precio ' +  carrito[i].precio );    
-}
 
+// se ordena de menor a mayor los precios
+carrito.sort( (a, b) => {
+    if( a.precio > b.precio){
+        return 1
+    }
 
+    if( a.precio < b.precio){
+        return -1
+    }
+    return 0
+});
 
-/* alert(`Gracias estimado \n ${nombreCliente} \n vuelva pronto!`) */
+console.log(carrito);
